@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contact_name"
+        android:text="Alex"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone_number"
+        android:text="4381111026"
+        android:layout_below="@+id/contact_name"
+        android:layout_marginTop="5dp"
+        android:textSize="10dp"
+        android:layout_alignLeft="@+id/contact_name"
+        ></TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update contact"
+        android:layout_below="@+id/phone_number"
+        android:layout_marginTop="10dp"
+        android:onClick="onUpdateContact"
+        android:layout_alignLeft="@+id/contact_name"
+        ></Button>
+
+    <ImageView
+        android:id="@+id/contact_portrait"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#aaa"
+        android:adjustViewBounds="true"
+        android:layout_alignTop="@+id/contact_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        ></ImageView>
+
+    <Button
+        android:id="@+id/im_cool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="I'm cool!"
+        ></Button>
+</RelativeLayout>
