@@ -54,5 +54,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="I'm cool!"
+        android:onClick="onImCoolClick"
         ></Button>
 </RelativeLayout>

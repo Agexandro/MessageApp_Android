@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,6 +23,7 @@ import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 private static final int PICK_CONTACT_REQUEST = 0;
+private Uri contactUri = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,9 +121,15 @@ private static final int PICK_CONTACT_REQUEST = 0;
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == PICK_CONTACT_REQUEST){
             if (resultCode == RESULT_OK){
-                renderContact(data.getData());
+                contactUri = data.getData();
+                renderContact(contactUri);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void onImCoolClick(View view){
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(getDisplayPhone(contactUri),null,"Babe, I'm Cool!",null,null);
     }
 }
